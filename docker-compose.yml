@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    container_name: xueqing
+    ports:
+      - "8000:8000"   # 想用 80 端口就把左边改成 "80:8000"
+    environment:
+      SECRET_KEY: "please-change-this-to-a-long-random-string"
+      DEEPSEEK_API_KEY: "sk-xxxxxxxxxxxxxxxx"   # ← 换成你的真实密钥
+    volumes:
+      - ./data:/app/data   # 数据持久化:重启容器不丢数据
+    restart: unless-stopped

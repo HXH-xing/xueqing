@@ -1,0 +1,12 @@
+# Render Blueprint 一键部署配置
+# 把仓库连接到 Render 后,它会识别此文件,点一次 "Apply Blueprint" 即完成全部部署。
+services:
+  - type: web
+    name: xueqing
+    runtime: docker            # 使用仓库根目录的 Dockerfile 构建
+    plan: free                 # 免费套餐(闲置后会休眠,首次访问需等几十秒)
+    healthCheckPath: /health   # 后端自带健康检查接口
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true    # 自动生成随机 JWT 密钥,避免被伪造
+      # DeepSeek 密钥走代码内默认值;如需更换,部署后在 Render 面板手动加 DEEPSEEK_API_KEY

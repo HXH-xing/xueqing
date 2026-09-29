@@ -1,0 +1,12 @@
+node_modules
+dist
+.env
+data
+*.db
+__pycache__
+*.pyc
+.git
+.gitignore
+DEPLOY.md
+*.md
+.vscode

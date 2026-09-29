@@ -1,0 +1,17 @@
+# 依赖与构建产物
+node_modules/
+dist/
+__pycache__/
+*.pyc
+
+# 密钥与本地数据(绝不提交)
+.env
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# 工具与系统
+.claude/
+.DS_Store
+Thumbs.db
