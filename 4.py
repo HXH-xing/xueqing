@@ -49,7 +49,7 @@ class Settings:
 settings = Settings()
 
 # ========== DeepSeek AI 配置 ==========
-DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "sk-0f1f0438d56346f0b0a9cf941c2cd578")  # 生产部署请用环境变量覆盖
+DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")  # 密钥通过环境变量注入(如 Render 面板),勿写死到代码里
 DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
 # 创建目录
 os.makedirs("./data", exist_ok=True)

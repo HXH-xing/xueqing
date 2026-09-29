@@ -9,4 +9,6 @@ services:
     envVars:
       - key: SECRET_KEY
         generateValue: true    # 自动生成随机 JWT 密钥,避免被伪造
-      # DeepSeek 密钥走代码内默认值;如需更换,部署后在 Render 面板手动加 DEEPSEEK_API_KEY
+      - key: DEEPSEEK_API_KEY
+        sync: false            # 不随仓库同步,部署后在 Render 面板填入你的真实 DeepSeek 密钥
+        value: sk-请替换成你的DeepSeek密钥
